@@ -1,0 +1,20 @@
+{
+  "name": "WDI_PROJECT_4",
+  "description": "This is the fourth project with GA",
+  "main": "index.js",
+  "authors": [
+    "DaneshMadarbakus <daneshplt@hotmail.co.uk>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

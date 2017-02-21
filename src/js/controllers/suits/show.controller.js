@@ -1,6 +1,6 @@
 angular
   .module('rent-a-suit')
-  .controller('suitsShowCtrl', SuitsShowCtrl);
+  .controller('SuitsShowCtrl', SuitsShowCtrl);
 
 SuitsShowCtrl.$inject = ['Suit', '$stateParams'];
 function SuitsShowCtrl(Suit, $stateParams){

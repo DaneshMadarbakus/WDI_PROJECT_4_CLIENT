@@ -1,1 +1,9 @@
 <h1>{{ suitsShow.suit.title }}</h1>
+<img src="{{ suitsShow.suit.image }}" alt="suit image">
+<h3>{{ suitsShow.suit.title }}'s Current Requests</h3>
+<p ng-repeat="requests in suitsShow.suit.requests">Requested from {{ requests.start_time }} till {{ requests.end_time }} by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
+<br>
+<p>Want to rent this suit?</p>
+<br>
+<h3>{{ suitsShow.suit.title }}'s Reviews</h3>
+<p ng-repeat="reviews in suitsShow.suit.reviews">{{ reviews.score }} stars. {{ reviews.comment }}. Reviewed on {{ reviews.created_at }}</p>

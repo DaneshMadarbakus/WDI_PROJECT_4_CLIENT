@@ -14,6 +14,9 @@
   </head>
   <body ng-controller="MainCtrl as main">
   <header>
+    <div class="container">
+    <h1>Man Meets Suit</h1>
+    </div>
     <nav class="navbar navbar-default">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,15 +27,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ui-sref="home">Rent-A-Suit</a>
+          <a class="navbar-brand" ui-sref="home">Man Meets Suit</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p class="navbar-text">Welcome, {{ main.user.username }}</p>
-            </li>
             <li ng-hide="main.user">
               <a ui-sref="register">Register</a>
             </li>
@@ -43,6 +43,15 @@
               <a ui-sref="usersIndex">Users</a>
             </li>
             <li ng-show="main.user">
+              <a ui-sref="suitsIndex">Search Suits</a>
+            </li>
+            <li ng-show="main.user">
+              <a ui-sref="usersShow">{{ main.user.username }}</a>
+            </li>
+            <li ng-show="main.user">
+              <a ui-sref="usersShow">My Suits</a>
+            </li>
+            <li ng-show="main.user">
               <a ng-click="main.logout()">Logout</a>
             </li>
           </ul>
@@ -51,5 +60,39 @@
     </nav>
   </header>
   <main class="container" ui-view></main>
+
+<br>
+
+
+<div class="footer">
+    <div class="container">
+      <div class="row">
+              <div class="col-md-4">
+                <center>
+                  <br>
+                  <h4 class="footertext">Measure Yourself</h4>
+                  <p class="footertext">You can thank all the crazy programming here to this guy.<br>
+                </center>
+              </div>
+              <div class="col-md-4">
+                <center>
+                  <br>
+                  <h4 class="footertext">Measure Your Suit</h4>
+                  <p class="footertext">All the images here are hand drawn by this man.<br>
+                </center>
+              </div>
+              <div class="col-md-4">
+                <center>
+                  <br>
+                  <h4 class="footertext">About Us</h4>
+                  <p class="footertext">This pretty site and the copy it holds are all thanks to this guy.<br>
+                </center>
+              </div>
+            </div>
+            <div class="row">
+            <p><center><a href="#">Contact Us</a> <p class="footertext">Copyright 2017</p></center></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

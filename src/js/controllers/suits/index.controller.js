@@ -3,8 +3,8 @@ angular
   .controller('SuitsIndexCtrl', SuitsIndexCtrl);
 
 SuitsIndexCtrl.$inject = ['Suit'];
-function SuitsIndexCtrl(){
-
-  console.log('hi');
-
+function SuitsIndexCtrl(Suit){
+  const vm = this;
+  vm.suits = Suit.query();
+  console.log(vm.suits);
 }

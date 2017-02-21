@@ -41,17 +41,17 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'SuitsIndexCtrl',
     controllerAs: 'suitsIndex'
   })
-  .state('suitsShow', {
-    url: '/suits/:id',
-    templateUrl: '/js/views/suits/show.html',
-    controller: 'SuitsShowCtrl',
-    controllerAs: 'suitsShow'
-  })
   .state('suitsNew', {
     url: '/suits/new',
     templateUrl: '/js/views/suits/new.html',
     controller: 'SuitsNewCtrl',
     controllerAs: 'suitsNew'
+  })
+  .state('suitsShow', {
+    url: '/suits/:id',
+    templateUrl: '/js/views/suits/show.html',
+    controller: 'SuitsShowCtrl',
+    controllerAs: 'suitsShow'
   });
 
   $urlRouterProvider.otherwise('/');

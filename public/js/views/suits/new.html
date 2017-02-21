@@ -1,37 +1,73 @@
 <h1>Add new suit</h1>
-<form ng-submit="suitsNew.post()">
+<form ng-submit="suitsNew.create()">
   <div class="form-group">
-    <input class="form-control" type="text" name="username" ng-model="register.user.username" placeholder="Username">
+    <input class="form-control" type="text" name="title" ng-model="suitsNew.suit.title" placeholder="Title">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="firstName" ng-model="register.user.first_name" placeholder="First name">
+    <input class="form-control" type="text" name="brand" ng-model="suitsNew.suit.brand" placeholder="Brand">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="lastName" ng-model="register.user.last_name" placeholder="Last name">
+    <input class="form-control" type="text" name="image" ng-model="suitsNew.suit.image" placeholder="Image URL">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="image" ng-model="register.user.profile_img" placeholder="Image">
+    <input class="form-control" type="text" name="colour" ng-model="suitsNew.suit.colour" placeholder="Colour">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address first line" ng-model="register.user.address_first_line" placeholder="Address first line">
+    <input class="form-control" type="text" name="jacket_chest" ng-model="suitsNew.suit.jacket_chest" placeholder="Chest Size">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address second line" ng-model="register.user.address_second_line" placeholder="Address second line">
+    <input class="form-control" type="text" name="jacket_length" ng-model="suitsNew.suit.jacket_length" placeholder="Jacket Length">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address postcode" ng-model="register.user.address_postcode" placeholder="Postcode">
+    <input class="form-control" type="text" name="jacket_shoulder_length" ng-model="suitsNew.suit.jacket_shoulder_length" placeholder="Jackets Shoulder Length">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address city" ng-model="register.user.address_city" placeholder="City">
+    <input class="form-control" type="text" name="jacket_sleeve" ng-model="suitsNew.suit.jacket_sleeve" placeholder="Jacket Sleeve">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="telephone number" ng-model="register.user.telephone_no" placeholder="Telephone number">
+    <input class="form-control" type="text" name="jacket_waist" ng-model="suitsNew.suit.jacket_waist" placeholder="Jacket Waist">
   </div>
   <div class="form-group">
-    <input class="form-control" type="password" name="password" ng-model="register.user.password" placeholder="Password">
+    <input class="form-control" type="text" name="trouser_Waist" ng-model="suitsNew.suit.trouser_waist" placeholder="Trouser Waist">
   </div>
   <div class="form-group">
-    <input class="form-control" type="password" name="passwordConfirmation" ng-model="register.user.password_confirmation" placeholder="Password confirmation">
+    <input class="form-control" type="text" name="trouser_length" ng-model="suitsNew.suit.trouser_length" placeholder="Trouser length">
   </div>
-  <input class="btn btn-primary" type="submit" value="Submit" />
+  <div class="form-group">
+    <input class="form-control" type="text" name="trouser_front_rise" ng-model="suitsNew.suit.trouser_front_rise" placeholder="Trouser Front Rise">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="notes" ng-model="suitsNew.suit.notes" placeholder="Notes">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="deposit" ng-model="suitsNew.suit.deposit" placeholder="Deposit">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="daily_price" ng-model="suitsNew.suit.daily_price" placeholder="Daily Price">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="fit" ng-model="suitsNew.suit.fit" placeholder="Fit">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Submit"/>
 </form>
+
+    <!-- title
+    brand
+    image
+    colour
+
+    jacket_chest
+    jacket_length
+
+    jacket_shoulder_length
+    jacket_sleeve
+    jacket_waist
+
+    trouser_waist
+    trouser_length
+
+    trouser_front_rise
+    notes
+    deposit
+    daily_price
+    fit -->

@@ -1,0 +1,12 @@
+<h1>Suits</h1>
+<div class="media" ng-repeat="suit in suitsIndex.suits">
+  <div class="media-left">
+    <a ui-sref="#">
+      <img class="media-object" ng-src="{{ suit.image }}">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ suit.suitname }}</h4>
+    <p>{{ suit.email }}</p>
+  </div>
+</div>

@@ -1,40 +1,40 @@
 <h1>Update your profile</h1>
-<form ng-submit="usersUpdate.()">
+<form ng-submit="usersUpdate.edit()">
   <div class="form-group">
-    <input class="form-control" type="text" name="username" ng-model="register.user.username" placeholder="Username">
+    <input class="form-control" type="text" name="username" ng-model="usersUpdate.user.username" placeholder="Username">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="firstName" ng-model="register.user.first_name" placeholder="First name">
+    <input class="form-control" type="text" name="firstName" ng-model="usersUpdate.user.first_name" placeholder="First name">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="lastName" ng-model="register.user.last_name" placeholder="Last name">
+    <input class="form-control" type="text" name="lastName" ng-model="usersUpdate.user.last_name" placeholder="Last name">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="image" ng-model="register.user.profile_img" placeholder="Image">
+    <input class="form-control" type="text" name="image" ng-model="usersUpdate.user.profile_img" placeholder="Image">
   </div>
   <div class="form-group">
-    <input class="form-control" type="email" name="email" ng-model="register.user.email" placeholder="Email">
+    <input class="form-control" type="email" name="email" ng-model="usersUpdate.user.email" placeholder="Email">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address first line" ng-model="register.user.address_first_line" placeholder="Address first line">
+    <input class="form-control" type="text" name="Address first line" ng-model="usersUpdate.user.address_first_line" placeholder="Address first line">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address second line" ng-model="register.user.address_second_line" placeholder="Address second line">
+    <input class="form-control" type="text" name="Address second line" ng-model="usersUpdate.user.address_second_line" placeholder="Address second line">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address postcode" ng-model="register.user.address_postcode" placeholder="Postcode">
+    <input class="form-control" type="text" name="Address postcode" ng-model="usersUpdate.user.address_postcode" placeholder="Postcode">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="Address city" ng-model="register.user.address_city" placeholder="City">
+    <input class="form-control" type="text" name="Address city" ng-model="usersUpdate.user.address_city" placeholder="City">
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="telephone number" ng-model="register.user.telephone_no" placeholder="Telephone number">
+    <input class="form-control" type="text" name="telephone number" ng-model="usersUpdate.user.telephone_no" placeholder="Telephone number">
   </div>
   <div class="form-group">
-    <input class="form-control" type="password" name="password" ng-model="register.user.password" placeholder="Password">
+    <input class="form-control" type="password" name="password" ng-model="usersUpdate.user.password" placeholder="Password">
   </div>
   <div class="form-group">
-    <input class="form-control" type="password" name="passwordConfirmation" ng-model="register.user.password_confirmation" placeholder="Password confirmation">
+    <input class="form-control" type="password" name="passwordConfirmation" ng-model="usersUpdate.user.password_confirmation" placeholder="Password confirmation">
   </div>
   <input class="btn btn-primary" type="submit" value="Submit" />
 </form>

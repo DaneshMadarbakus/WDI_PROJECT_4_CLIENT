@@ -14,14 +14,17 @@ function SuitsShowCtrl(Suit, Request, Review, $stateParams){
         vm.suit = response;
       });
 
-  // vm.requestcreate = () => {
-  //   Request
-  //   .save(vm.request)
-  //   .$promise
-  //   .then(() => {
-  //     vm.show;
-  //   });
-  // };
+  vm.requestcreate = () => {
+    vm.request.suit_id = $stateParams.id;
+    console.log(vm.request);
+    Request
+      .save(vm.request)
+      .$promise
+      .then((data) => {
+        vm.suit.requests.push(data);
+        vm.request = '';
+      });
+  };
 
   vm.reviewcreate = () => {
     vm.review.suit_id = $stateParams.id;
@@ -30,6 +33,7 @@ function SuitsShowCtrl(Suit, Request, Review, $stateParams){
       .$promise
       .then((data) => {
         vm.suit.reviews.push(data);
+        vm.review = '';
       });
   };
 }

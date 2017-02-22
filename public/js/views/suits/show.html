@@ -1,4 +1,6 @@
 <h1>{{ suitsShow.suit.title }}</h1>
+{{suitsShow.suit.user.id}}
+<h5>posted by <span ui-sref="usersShow({id: suitsShow.suit.user.id})">{{ suitsShow.suit.user.first_name }}</span> </h5>
 <img src="{{ suitsShow.suit.image }}" alt="suit image">
 <h3>{{ suitsShow.suit.title }}'s Current Requests</h3>
 <p ng-repeat="requests in suitsShow.suit.requests">Requested from {{ requests.start_time }} till {{ requests.end_time }} by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
@@ -7,11 +9,11 @@
 <form ng-submit="suitsShow.requestcreate()">
   <p>I want to rent this suit from</p>
   <div class="form-group">
-    <input class="form-control" type="date" name="score" ng-model="suitsShow.requests.start_time" placeholder="start time">
+    <input class="form-control" type="date" name="score" ng-model="suitsShow.request.start_time" placeholder="start time">
   </div>
   <p>till</p>
   <div class="form-group">
-    <input class="form-control" type="date" name="comment" ng-model="suitsShow.reviews.end_time" placeholder="end time">
+    <input class="form-control" type="date" name="comment" ng-model="suitsShow.request.end_time" placeholder="end time">
   </div>
   <input class="btn btn-primary" type="submit" value="Submit"/>
 </form>

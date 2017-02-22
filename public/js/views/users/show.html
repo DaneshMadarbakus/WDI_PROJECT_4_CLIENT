@@ -1,7 +1,10 @@
 <h1>{{ usersShow.user.first_name }} {{ usersShow.user.last_name}}</h1>
+
+<h4 ng-if="usersShow.user.id == main.user.id">holla at ya damn boy</h4>
+
 <h2>{{ usersShow.user.first_name}}'s suits</h2>
 <div ng-repeat="suits in usersShow.user.suits">
 
   <h4 ui-sref="suitsShow({id: suits.id})">{{ suits.title }}</h4>
-  <img src="{{ suits.image }}" alt="">
+  <img src="{{ suits.image }}" alt="suit">
 </div>

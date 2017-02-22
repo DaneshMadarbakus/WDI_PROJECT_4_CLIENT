@@ -2,8 +2,9 @@ angular
   .module('rent-a-suit')
   .controller('SuitsUpdateCtrl', SuitsUpdateCtrl);
 
-SuitsUpdateCtrl.$inject = ['Suit', '$state', '$stateParams'];
-function SuitsUpdateCtrl(Suit, $state, $stateParams){
+SuitsUpdateCtrl.$inject = ['Suit', '$state', '$stateParams', 'CurrentUserService'];
+function SuitsUpdateCtrl(Suit, $state, $stateParams, CurrentUserService){
+
   const vm = this;
   Suit
     .get($stateParams)
@@ -18,7 +19,7 @@ function SuitsUpdateCtrl(Suit, $state, $stateParams){
       .update($stateParams, vm.suit)
       .$promise
       .then(() => {
-        $state.go('suitsShow', $stateParams);
+        $state.go('usersShow', { id: CurrentUserService.currentUser.id});
       });
   };
 }

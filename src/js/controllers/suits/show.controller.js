@@ -9,8 +9,8 @@ function SuitsShowCtrl(Suit, Request, Review, $stateParams){
       .get($stateParams)
       .$promise
       .then(response => {
-        console.log(response);
         vm.suit = response;
+        console.log(response);
       });
 
   vm.requestcreate = () => {
@@ -25,6 +25,15 @@ function SuitsShowCtrl(Suit, Request, Review, $stateParams){
       });
   };
 
+  vm.requestdelete = (requests) => {
+    Request
+      .delete({id: requests.id} )
+      .$promise
+      .then(() => {
+        vm.suit.requests.splice(vm.suit.requests.indexOf(requests), 1);
+      });
+  };
+
   vm.reviewcreate = () => {
     vm.review.suit_id = $stateParams.id;
     Review
@@ -33,6 +42,15 @@ function SuitsShowCtrl(Suit, Request, Review, $stateParams){
       .then((data) => {
         vm.suit.reviews.push(data);
         vm.review = '';
+      });
+  };
+
+  vm.reviewdelete = (reviews) => {
+    Review
+      .delete({id: reviews.id})
+      .$promise
+      .then(() => {
+        vm.suit.reviews.splice(vm.suit.reviews.indexOf(reviews), 1);
       });
   };
 }

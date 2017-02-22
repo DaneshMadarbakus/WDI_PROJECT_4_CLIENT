@@ -7,7 +7,8 @@ function requestFactory(API, $resource){
   return $resource(`${API}/requests/:id`, { id: '@_id'},
     {
       'save': {method: 'POST'},
-      'update': {method: 'PUT'}
+      'update': {method: 'PUT'},
+      'delete': {method: 'DELETE'}
     }
   );
 }

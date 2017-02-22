@@ -2,7 +2,12 @@
 <h5>posted by <span ui-sref="usersShow({id: suitsShow.suit.user.id})">{{ suitsShow.suit.user.first_name }}</span> </h5>
 <img src="{{ suitsShow.suit.image }}" alt="suit image">
 <h3>{{ suitsShow.suit.title }}'s Current Requests</h3>
-<p ng-repeat="requests in suitsShow.suit.requests">Requested from {{ requests.start_time }} till {{ requests.end_time }} by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
+
+<div ng-repeat="requests in suitsShow.suit.requests">
+<p>Requested from {{ requests.start_time }} till {{ requests.end_time }} by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
+<h6 ng-if="requests.requester.id == main.user.id" ng-click="suitsShow.requestdelete(requests)">Delete request</h6>
+</div>
+
 <br>
 <p>Want to rent this suit? Submit a request below!</p>
 <form ng-submit="suitsShow.requestcreate()">
@@ -19,7 +24,7 @@
 
 <br>
 <h3>{{ suitsShow.suit.title }}'s Reviews</h3>
-<p ng-repeat="reviews in suitsShow.suit.reviews">{{ reviews.score }} stars. {{ reviews.comment }}. Reviewed on {{ reviews.created_at }}</p>
+<p ng-repeat="reviews in suitsShow.suit.reviews">{{ reviews.score }} stars. {{ reviews.comment }}. Reviewed on {{ reviews.created_at }} by {{reviews.reviewer.first_name }} {{reviews.reviewer.last_name }} <span ng-if="reviews.reviewer.id == main.user.id" ng-click="suitsShow.reviewdelete(reviews)">Delete review</span></p>
 
 <br>
 <p>Did you borrow this suit? If so let others know what your experience was like below!</p>

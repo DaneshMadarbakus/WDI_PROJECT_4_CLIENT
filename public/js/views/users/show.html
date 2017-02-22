@@ -7,4 +7,5 @@
 
   <h4 ui-sref="suitsShow({id: suits.id})">{{ suits.title }}</h4>
   <img src="{{ suits.image }}" alt="suit">
+  <h5 ng-if="usersShow.user.id == main.user.id" ui-sref="suitsUpdate({id: suits.id})">edit suit</h2>
 </div>

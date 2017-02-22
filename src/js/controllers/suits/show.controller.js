@@ -5,7 +5,6 @@ angular
 SuitsShowCtrl.$inject = ['Suit', 'Request', 'Review', '$stateParams'];
 function SuitsShowCtrl(Suit, Request, Review, $stateParams){
   const vm = this;
-  console.log($stateParams.id);
   Suit
       .get($stateParams)
       .$promise

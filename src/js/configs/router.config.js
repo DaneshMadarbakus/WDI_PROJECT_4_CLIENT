@@ -13,15 +13,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   })
   .state('measureyourself', {
     url: '/measureyourself',
-    templateUrl: '/js/views/home.html'
+    templateUrl: '/js/views/measureyourself.html'
   })
   .state('measureyoursuit', {
     url: '/measureyoursuit',
-    templateUrl: '/js/views/home.html'
+    templateUrl: '/js/views/measureyoursuit.html'
   })
   .state('aboutus', {
     url: '/aboutus',
-    templateUrl: '/js/views/home.html'
+    templateUrl: '/js/views/aboutus.html'
   })
   .state('register', {
     url: '/register',

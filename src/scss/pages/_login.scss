@@ -1,7 +1,46 @@
-.login{
-  h1{
-    font-size:35px;
+section.login{
+  form{
+    width:40%;
+    margin: 0 auto;
     font-family:$body-font;
-    color:red;
+    h2{
+      color: $black;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 40px;
+    }
+    input{
+      border: 1px solid $quarternary-color;
+      border-radius: 0%;
+      box-shadow: none;
+      height: 45px;
+    }
+    input:focus{
+      border-color:$quarternary-color;
+      box-shadow: none;
+    }
+    .btn-primary{
+      color: $accent-color;
+      text-transform: uppercase;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      background-color: $white;
+      border: 1px solid $accent-color;
+      font-size: 25px;
+      display: block;
+    }
+    .btn-primary:active{
+      box-shadow:none;
+    }
+    .btn-primary:focus{
+      outline:none;
+      border: 1px solid $accent-color;
+    }
+    .btn-primary:focus{
+      color:$accent-color;
+      background-color: $white;
+    }
   }
 }

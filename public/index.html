@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="rent-a-suit">
-  <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <title>suit</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- inject:js -->
-    <script src="js/app.js"></script>
-    <!-- endinject -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- endinject -->
-  </head>
-  <body ng-controller="MainCtrl as main">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>suit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Ubuntu:700|Playfair+Display" rel="stylesheet">
+  <!-- inject:js -->
+  <script src="js/app.js"></script>
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
   <header>
-    <div class="container">
-    <h1>Suit</h1>
-    </div>
+    <h1 ui-sref="home"><span class="dspan">&diams;</span> Suit <span class="dspan">&diams;</span></h1>
     <nav class="navbar navbar-default">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,12 +26,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ui-sref="home">Suit</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav">
             <li ng-hide="main.user">
               <a ui-sref="register">Register</a>
             </li>
@@ -59,43 +56,24 @@
       </div><!-- /.container-fluid -->
     </nav>
   </header>
-  <main class="container" ui-view></main>
-
-<br>
-
-
-<div class="footer">
+  <main ui-view></main>
+  <br>
+  <footer class="footer-bottom">
     <div class="container">
       <div class="row">
-              <div class="col-md-4">
-                <center>
-                  <br>
-                  <h4 class="footertext" ui-sref="measureyourself">Measure Yourself</h4>
-                  <p class="footertext">Don't know how to take your measurements?</p>
-                    <br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <br>
-                  <h4 class="footertext" ui-sref="measureyoursuit">Measure Your Suit</h4>
-                  <p class="footertext">Measure your suit before you post it!</p>
-                  <br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <br>
-                  <h4 class="footertext" ui-sref="aboutus">About Us</h4>
-                  <p class="footertext">A bit more about us!</p>
-                  <br>
-                </center>
-              </div>
-            </div>
-            <div class="row">
-            <center><p class="footertext">&copy; Suit 2017</p></center>
+        <div class="col-xs-6">
+          <p><span class="dspan">&diams;</span> Suit <span class="dspan">&diams;</span></p>
         </div>
+        <div class="col-md-6 col-xs-6">
+          <ul class="nav navbar-nav navbar-right">
+            <li ui-sref="measureyourself">Measure yourself |</li>
+            <li ui-sref="measureyoursuit">Measure your suit |</li>
+            <li ui-sref="aboutus">About |</li>
+            <li>© Suit 2017</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
+  </footer>
 </body>
 </html>

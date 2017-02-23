@@ -1,10 +1,15 @@
 @import "mixins";
 @import "variables";
 
+body {
+  background-color: $tertiary-color;
+}
+
 @import "modules/header";
 @import "modules/navbar";
 @import "modules/footer";
 
+@import "pages/home";
 
 /*
 @import "pages/companyDash";

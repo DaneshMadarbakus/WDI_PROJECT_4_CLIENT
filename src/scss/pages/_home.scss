@@ -1,0 +1,25 @@
+img{
+  width:100%;
+}
+.homediv{
+  margin-top: 65px;
+  font-family: $body-font;
+  color: $black;
+  div{
+    h2 {
+      font-size: 35px;
+    }
+    img{
+      width:100%;
+    }
+    h3 {
+      margin-top:40px;
+      font-size: 25px;
+      span{
+        font-size:10px;
+        position:relative;
+        bottom:5px;
+      }
+    }
+  }
+}

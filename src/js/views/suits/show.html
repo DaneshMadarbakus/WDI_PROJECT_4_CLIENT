@@ -1,46 +1,79 @@
-<h1>{{ suitsShow.suit.title }}</h1>
-<h5>posted by <span ui-sref="usersShow({id: suitsShow.suit.user.id})">{{ suitsShow.suit.user.first_name }}</span> </h5>
-<img src="{{ suitsShow.suit.image }}" alt="suit image">
-<h3>{{ suitsShow.suit.title }}'s Current Requests</h3>
+<section class="suitshow container">
+  <h1>{{ suitsShow.suit.title }}</h1>
+  <h5>Posted by <span ui-sref="usersShow({id: suitsShow.suit.user.id})">{{ suitsShow.suit.user.first_name }} {{ suitsShow.suit.user.last_name }}</span></h5>
+  <div class="firstdivs col-md-6 col-xs-6">
+    <img src="{{ suitsShow.suit.image }}" alt="suit image">
+  </div>
+  <div class="firstdivs col-md-6 col-xs-6">
+    <h2>{{ suitsShow.suit.brand }} ({{ suitsShow.suit.fit }} {{ suitsShow.suit.colour }})</h2>
+    <h5>{{ suitsShow.suit.notes }}</h5>
+    <h3>Sizes</h3>
+    <br>
+    <div class="sizes col-md-6 col-xs-6">
+      <li>Chest ({{ suitsShow.suit.jacket_chest }})</li>
+      <li>Jacket Length ({{ suitsShow.suit.jacket_length }})</li>
+      <li>Shoulder Length ({{ suitsShow.suit.jacket_shoulder_length }})</li>
+      <li>Sleeve Length ({{ suitsShow.suit.jacket_sleeve }})</li>
+    </div>
+    <div class="sizes col-md-6 col-xs-6">
+      <li>Jacket Waist ({{ suitsShow.suit.jacket_waist }})</li>
+      <li>Trouser Waist ({{ suitsShow.suit.trouser_waist }})</li>
+      <li>Trouser Length ({{ suitsShow.suit.trouser_length }})</li>
+      <li>Trouser Front Rise ({{ suitsShow.suit.trouser_front_rise }})</li>
+    </div>
+    <div class="prices">
+    <h3>Cost to hire: £{{ suitsShow.suit.daily_price }} per day</h3>
+    <h3>Deposit to hire: £{{ suitsShow.suit.deposit }}</h3>
+    </div>
+  </div>
 
-<div ng-repeat="requests in suitsShow.suit.requests">
-<p>Requested from {{ requests.start_time }} till {{ requests.end_time }} by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
-<h6 ng-if="requests.requester.id == main.user.id" ng-click="suitsShow.requestdelete(requests)">Delete request</h6>
+<div class="rrdiv col-md-6 col-xs-6">
+  <h3>Requests</h3>
+  <div class="requestsdiv" ng-repeat="requests in suitsShow.suit.requests">
+    <p>Requested from {{ requests.start_time }} till {{ requests.end_time }}</p>
+    <p>by {{ requests.requester.first_name }} {{ requests.requester.last_name }}.</p>
+    <h6><span ng-if="requests.requester.id == main.user.id" ng-click="suitsShow.requestdelete(requests)">Delete request</span></h6>
+  </div>
+  <br>
+  <h4>Want to hire this suit? Submit a request below!</h4>
+  <form ng-submit="suitsShow.requestcreate()">
+    <p>I want to rent this suit from</p>
+    <div class="form-group">
+      <input class="form-control" type="date" name="score" ng-model="suitsShow.request.start_time" placeholder="start time">
+    </div>
+    <p>till</p>
+    <div class="form-group">
+      <input class="form-control" type="date" name="comment" ng-model="suitsShow.request.end_time" placeholder="end time">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit"/>
+  </form>
 </div>
 
-<br>
-<p>Want to rent this suit? Submit a request below!</p>
-<form ng-submit="suitsShow.requestcreate()">
-  <p>I want to rent this suit from</p>
-  <div class="form-group">
-    <input class="form-control" type="date" name="score" ng-model="suitsShow.request.start_time" placeholder="start time">
+<div class="rrdiv col-md-6 col-xs-6">
+  <h3>Reviews</h3>
+  <div ng-repeat="reviews in suitsShow.suit.reviews">
+  <p>{{ reviews.score }} stars. {{ reviews.comment }}. Reviewed on {{ reviews.created_at }}</p>
+  <p>by {{reviews.reviewer.first_name }} {{reviews.reviewer.last_name }}</p>
+  <h6><span ng-if="reviews.reviewer.id == main.user.id" ng-click="suitsShow.reviewdelete(reviews)">Delete review</span></h6>
   </div>
-  <p>till</p>
-  <div class="form-group">
-    <input class="form-control" type="date" name="comment" ng-model="suitsShow.request.end_time" placeholder="end time">
-  </div>
-  <input class="btn btn-primary" type="submit" value="Submit"/>
-</form>
+  <br>
+  <h4>Did you borrow this suit? Write a review below!</h4>
 
-<br>
-<h3>{{ suitsShow.suit.title }}'s Reviews</h3>
-<p ng-repeat="reviews in suitsShow.suit.reviews">{{ reviews.score }} stars. {{ reviews.comment }}. Reviewed on {{ reviews.created_at }} by {{reviews.reviewer.first_name }} {{reviews.reviewer.last_name }} <span ng-if="reviews.reviewer.id == main.user.id" ng-click="suitsShow.reviewdelete(reviews)">Delete review</span></p>
+  <form ng-submit="suitsShow.reviewcreate()">
+    <div class="form-group">
+      <input class="form-control" type="text" name="comment" ng-model="suitsShow.review.comment" placeholder="Comment">
+    </div>
+    <div class="form-group">
+      <select name="Stars" ng-model="suitsShow.review.score" placeholder="5 stars">
+        <option value="5">&starf;&starf;&starf;&starf;&starf;</option>
+        <option value="4">&starf;&starf;&starf;&starf;</option>
+        <option value="3">&starf;&starf;&starf;</option>
+        <option value="2">&starf;&starf;</option>
+        <option value="1">&starf;</option>
+      </select>
+    </div>
+    <input class="btn btn-primary" type="submit" ng-click="reload()" value="Submit"/>
+  </form>
+</div>
 
-<br>
-<p>Did you borrow this suit? If so let others know what your experience was like below!</p>
-
-<form ng-submit="suitsShow.reviewcreate()">
-  <div class="form-group">
-    <input class="form-control" type="text" name="comment" ng-model="suitsShow.review.comment" placeholder="Comment">
-  </div>
-  <div class="form-group">
-    <select name="Stars" ng-model="suitsShow.review.score" placeholder="5 stars">
-      <option value="5">&starf;&starf;&starf;&starf;&starf;</option>
-      <option value="4">&starf;&starf;&starf;&starf;</option>
-      <option value="3">&starf;&starf;&starf;</option>
-      <option value="2">&starf;&starf;</option>
-      <option value="1">&starf;</option>
-    </select>
-  </div>
-  <input class="btn btn-primary" type="submit" ng-click="reload()" value="Submit"/>
-</form>
+</section>

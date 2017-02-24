@@ -1,2 +1,8 @@
+<section class="suitindex container">
 <h1>Suits</h1>
-<li ng-repeat="suits in suitsIndex.suits" ui-sref="suitsShow({id: suits.id})">{{ suits.title }}{{ suits.notes }}</li>
+<div class="col-md-4 col-xs-4" ng-repeat="suits in suitsIndex.suits">
+  <img ui-sref="suitsShow({id: suits.id})" src="{{ suits.image }}" alt="suit">
+  <h4 ui-sref="suitsShow({id: suits.id})">{{ suits.title }}</h4>
+  <h5>Cost to hire: £{{ suits.daily_price }} per day</h5>
+</div>
+</section>

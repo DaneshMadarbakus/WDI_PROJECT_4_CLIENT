@@ -1,11 +1,21 @@
+<section class="usershow container">
+<img src="{{ usersShow.user.profile_img }}" alt="profile picture">
 <h1>{{ usersShow.user.first_name }} {{ usersShow.user.last_name}}</h1>
-
-<h4 ng-if="usersShow.user.id == main.user.id" ui-sref="usersUpdate({ id: main.user.id})">Edit profile</h4>
+<ul>
+  <li>{{usersShow.user.address_first_line }},</li>
+  <li>{{usersShow.user.address_second_line }},</li>
+  <li>{{usersShow.user.address_city }},</li>
+  <li>{{usersShow.user.address_postcode }},</li>
+  <li>{{usersShow.user.telephone_no }},</li>
+  <li>{{usersShow.user.email }}</li>
+</ul>
+<h5 ng-if="usersShow.user.id == main.user.id" ui-sref="usersUpdate({ id: main.user.id})">Edit profile</h5>
+<br>
 
 <h2>{{ usersShow.user.first_name}}'s suits</h2>
-<div ng-repeat="suits in usersShow.user.suits">
-
+<div class="col-md-4 col-xs-4" ng-repeat="suits in usersShow.user.suits">
+  <img ui-sref="suitsShow({id: suits.id})" src="{{ suits.image }}" alt="suit">
   <h4 ui-sref="suitsShow({id: suits.id})">{{ suits.title }}</h4>
-  <img src="{{ suits.image }}" alt="suit">
-  <h5 ng-if="usersShow.user.id == main.user.id" ui-sref="suitsUpdate({id: suits.id})">edit suit</h2>
+  <h5 ng-if="usersShow.user.id == main.user.id" ui-sref="suitsUpdate({id: suits.id})">Edit suit</h5>
 </div>
+</section>

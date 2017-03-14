@@ -1,3 +1,3 @@
 angular
   .module('rent-a-suit')
-  .constant('API', 'http://localhost:3000');
+  .constant('API', 'https://somethingelse-api.herokuapp.com/');
